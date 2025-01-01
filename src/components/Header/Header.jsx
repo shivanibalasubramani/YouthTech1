@@ -16,7 +16,7 @@ export const Header = () => {
         />
       </AttentionSeeker>
 
-      <p onClick={() => navigate("/")}>Quack</p>
+      <p onClick={() => navigate("/")}>YouthTech</p>
     </div>
   );
 };
