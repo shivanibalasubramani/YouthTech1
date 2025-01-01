@@ -1,6 +1,134 @@
-.no-bookmarks{
-    color: grey;
+.no-bookmarks {
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     padding: 1rem;
     text-align: center;
-}
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .area-selection {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .area-selection select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .top-users {
+    margin-top: 2rem;
+    background-color: #ffffffd8;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .top-users h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .rank-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  
+  .user-info .username {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .user-info .points {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .rank-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  .rank-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  
+  .user-info .username {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .user-info .points {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .user-info .level {
+    font-size: 0.9rem;
+    color: #007bff; /* Level color (e.g., blue) */
+  }
+  
+  .rank-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
