@@ -57,7 +57,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd react-social-media
+  cd YouthTech1
 ```
 
 Install dependencies
