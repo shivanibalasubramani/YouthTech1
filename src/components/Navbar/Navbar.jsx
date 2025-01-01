@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import { useAuth } from "../../contexts/AuthProvider";
+import { HiOutlineChartBar } from "react-icons/hi"; // Add this import
+
 
 import { CreatePostForm } from "../CreatePostForm/CreatePostForm";
 import {
@@ -37,9 +39,10 @@ export const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="navlink" style={getActiveStyle} to="/bookmark">
-            <HiOutlineBookmark className="navlink-icon" />
-            <p>Bookmark</p>
+        <NavLink className="navlink" style={getActiveStyle} to="/bookmark">
+            
+            <HiOutlineChartBar className="navlink-icon" />
+            <p>Analysis</p>
           </NavLink>
         </li>
         <li>
