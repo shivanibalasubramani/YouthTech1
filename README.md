@@ -2,11 +2,9 @@
 # YouthTech
 
 ## Demo App Link
-
 https://youthtechkyn.netlify.app
 
 ## Demo Video Link
-
 https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 
@@ -21,39 +19,39 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 ### 1.Social Media Essentials:
 
-#User authentication and profile creation.
+#### User authentication and profile creation.
 
-#Add, delete, like, and comment on posts.
+#### Add, delete, like, and comment on posts.
 
-#Follow and unfollow users.
+#### Follow and unfollow users.
 
 ### 2.Explore Page:
 
-#Displays videos and posts shared by followers.
+#### Displays videos and posts shared by followers.
 
-#Ensures a curated and personalized user feed.
+#### Ensures a curated and personalized user feed.
 
 ### 3.Analytics Page:
 
-#View Analysis: Tracks engagement metrics (likes, comments, shares) and rewards users with redeemable points.
+#### View Analysis: Tracks engagement metrics (likes, comments, shares) and rewards users with redeemable points.
 
-#Top Rank: Displays leaderboard rankings of top scorers within selected locations.
+#### Top Rank: Displays leaderboard rankings of top scorers within selected locations.
 
-#Donation Points: Enables users to donate earned points to nearby charitable foundations for social impact.
+#### Donation Points: Enables users to donate earned points to nearby charitable foundations for social impact.
 
-#Quiz: Gamified interaction that rewards users for answering quizzes based on platform content.
+#### Quiz: Gamified interaction that rewards users for answering quizzes based on platform content.
 
 ### 4.Reward System:
 
-#Point-based achievements encourage user activity.
+#### Point-based achievements encourage user activity.
 
-#Redeemable points for vouchers, coupons, and discounts.
+#### Redeemable points for vouchers, coupons, and discounts.
 
 ### 5.Community Engagement:
 
-#Fosters connections through interactive content.
+#### Fosters connections through interactive content.
 
-#Promotes responsible digital interactions by rewarding positive behavior.
+#### Promotes responsible digital interactions by rewarding positive behavior.
 
 
 
