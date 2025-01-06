@@ -19,7 +19,7 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 ## Features
 
-# 1.Social Media Essentials:
+### 1.Social Media Essentials:
 
 #User authentication and profile creation.
 
@@ -27,13 +27,13 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 #Follow and unfollow users.
 
-# 2.Explore Page:
+### 2.Explore Page:
 
 #Displays videos and posts shared by followers.
 
 #Ensures a curated and personalized user feed.
 
-# 3.Analytics Page:
+### 3.Analytics Page:
 
 #View Analysis: Tracks engagement metrics (likes, comments, shares) and rewards users with redeemable points.
 
@@ -43,13 +43,13 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 #Quiz: Gamified interaction that rewards users for answering quizzes based on platform content.
 
-# 4.Reward System:
+### 4.Reward System:
 
 #Point-based achievements encourage user activity.
 
 #Redeemable points for vouchers, coupons, and discounts.
 
-# 5.Community Engagement:
+### 5.Community Engagement:
 
 #Fosters connections through interactive content.
 
