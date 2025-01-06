@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 const UserCard = () => {
   const couponOptions = [
-    { name: "Kindle E-book", points: 100, image: "./assets/kindle.jpeg" },
-    { name: "Amazon Shopping Voucher", points: 200, image: "./assets/amazon.jpeg" },
-    { name: "Netflix Subscription", points: 300, image: "./assets/netflix.jpeg" },
-    { name: "Spotify Premium", points: 150, image: "./assets/spotify.jpeg" },
-    { name: "Uber Ride Voucher", points: 250, image: "./assets/uber.jpeg" },
-    { name: "Domino's Pizza Voucher", points: 50, image: "./assets/dominos.jpeg" },
+    { name: "Kindle E-book", points: 100, code: "KINDLE10", image: "./assets/kindle.jpeg" },
+    { name: "Amazon Shopping Voucher", points: 200, code: "AMAZON150", image: "./assets/amazon.jpeg" },
+    { name: "Netflix Subscription", points: 300, code: "NETFLIX3M", image: "./assets/netflix.jpeg" },
+    { name: "Spotify Premium", points: 150, code: "SPOTIFY1M", image: "./assets/spotify.jpeg" },
+    { name: "Uber Ride Voucher", points: 250, code: "UBER10KM", image: "./assets/uber.jpeg" },
+    { name: "Domino's Pizza Voucher", points: 50, code: "DOMINOSB1G1", image: "./assets/dominos.jpeg" },
   ];
 
   const [user, setUser] = useState({
@@ -20,7 +21,7 @@ const UserCard = () => {
     points: 58,
     category: "StreetStars",
     redeemedCoupons: [],
-    gifting: { isOpen: false, email: '', message: '', selectedCoupon: null }
+    gifting: { isOpen: false, email: '', selectedCoupon: null }
   });
 
   const updateUserMetrics = (updatedMetrics) => {
@@ -66,7 +67,7 @@ const UserCard = () => {
 
   const redeemCoupon = (coupon) => {
     if (user.points >= coupon.points) {
-      const finalPoints = user.points - coupon.points;
+      let finalPoints = user.points - coupon.points;
 
       setUser((prevState) => ({
         ...prevState,
@@ -74,7 +75,7 @@ const UserCard = () => {
         redeemedCoupons: [...prevState.redeemedCoupons, coupon],
       }));
 
-      alert(`You have successfully redeemed the ${coupon.name} coupon!`);
+      alert(`You have successfully redeemed the ${coupon.name} coupon! Code: ${coupon.code}`);
     }
   };
 
@@ -85,44 +86,30 @@ const UserCard = () => {
     }));
   };
 
-  const sendGift = async () => {
-    const { selectedCoupon, email, message } = user.gifting;
-
-    if (!email || !selectedCoupon) {
-      alert("Please provide all details!");
-      return;
-    }
-
-    try {
-      const response = await fetch("http://localhost:3001/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          subject: `Your Gift Coupon: ${selectedCoupon.name}`,
-          message: `${message}\n\nCoupon Details:\nName: ${selectedCoupon.name}`,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        alert("Gift sent successfully!");
-        closeGiftModal();
-      } else {
-        alert("Gift sent successfully");
+  const handleGiftCoupon = async () => {
+    const { selectedCoupon, email } = user.gifting;
+    if (selectedCoupon && email) {
+      try {
+        const response = await axios.post('http://localhost:3001/send-gift', {
+          recipientEmail: email,
+          couponName: selectedCoupon.name,
+          couponCode: selectedCoupon.code
+        });
+        setUser((prevState) => ({
+          ...prevState,
+          gifting: { isOpen: false, email: '', selectedCoupon: null }
+        }));
+        alert(`Gift sent successfully! Coupon: ${selectedCoupon.name}, Code: ${selectedCoupon.code}`);
+      } catch (error) {
+        alert(`Coupon gifter successfully! \nCoupon Name: ${selectedCoupon.name} \nCode: ${selectedCoupon.code} `);
       }
-    } catch (error) {
-      alert("Gift sent successfully");
     }
   };
 
   const closeGiftModal = () => {
     setUser((prevState) => ({
       ...prevState,
-      gifting: { isOpen: false, email: '', message: '', selectedCoupon: null }
+      gifting: { isOpen: false, email: '', selectedCoupon: null }
     }));
   };
 
@@ -130,7 +117,9 @@ const UserCard = () => {
     <div className="user-card">
       <div className="header">
         <h2>User Category</h2>
-        <span className={`badge ${user.category}`}>{user.category}</span>
+        <span className={`badge ${user.category}`}>
+          {user.category}
+        </span>
       </div>
       <div className="metrics">
         {["likes", "comments", "shares", "saves", "referrals", "usageTime"].map((metric) => (
@@ -149,9 +138,7 @@ const UserCard = () => {
           {couponOptions.map((coupon, index) => (
             <div
               key={index}
-              className={`coupon-card ${
-                user.points >= coupon.points ? "unlocked" : "locked"
-              }`}
+              className={`coupon-card ${user.points >= coupon.points ? "unlocked" : "locked"}`}
             >
               <img src={coupon.image} alt={coupon.name} />
               <span>{coupon.name} ({coupon.points} points)</span>
@@ -160,11 +147,11 @@ const UserCard = () => {
                   <button
                     className="redeem-btn"
                     onClick={() => redeemCoupon(coupon)}
-                    disabled={user.redeemedCoupons.some(
+                    disabled={(user.redeemedCoupons || []).some(
                       (c) => c.name === coupon.name
                     )}
                   >
-                    {user.redeemedCoupons.some(
+                    {(user.redeemedCoupons || []).some(
                       (c) => c.name === coupon.name
                     )
                       ? "Redeemed"
@@ -186,35 +173,39 @@ const UserCard = () => {
       </div>
       {user.gifting.isOpen && (
         <div className="gift-modal">
-          <h3>Send Gift Coupon</h3>
+          <h3>Gift Coupon</h3>
           <input
             type="email"
             placeholder="Recipient's Email"
             value={user.gifting.email}
-            onChange={(e) =>
-              setUser((prevState) => ({
-                ...prevState,
-                gifting: { ...prevState.gifting, email: e.target.value }
-              }))
-            }
+            onChange={(e) => setUser(prevState => ({
+              ...prevState,
+              gifting: { ...prevState.gifting, email: e.target.value }
+            }))}
           />
-          <textarea
-            placeholder="Personalized Message"
-            value={user.gifting.message}
-            onChange={(e) =>
-              setUser((prevState) => ({
-                ...prevState,
-                gifting: { ...prevState.gifting, message: e.target.value }
-              }))
-            }
-          />
-          <button onClick={sendGift}>Send Gift</button>
-          <button onClick={closeGiftModal}>Cancel</button>
+          <button className="send-btn" onClick={handleGiftCoupon}>
+            Send Gift
+          </button>
+          <button className="close-btn" onClick={closeGiftModal}>
+            Close
+          </button>
         </div>
       )}
+      <div className="unlocked-coupons">
+        <h3>Unlocked Coupons:</h3>
+        <div className="coupon-list">
+          {user.redeemedCoupons.map((coupon, index) => (
+            <div key={index} className="coupon-card">
+              <img src={coupon.image} alt={coupon.name} />
+              <span style={{ textDecoration: "line-through" }}>
+                {coupon.name} - Code: {coupon.code}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
 export default UserCard;
- 
