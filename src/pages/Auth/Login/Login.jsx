@@ -28,7 +28,7 @@ export const Login = () => {
         />
       </section>
       <section className="login-form-container">
-        <h1 className="login-form-heading">Welcome to Quack!</h1>
+        <h1 className="login-form-heading">Welcome to YouthTech!</h1>
 
         <h3 className="login-heading">Login </h3>
 
