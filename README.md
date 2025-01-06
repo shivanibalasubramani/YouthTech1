@@ -19,39 +19,39 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 ### 1.Social Media Essentials:
 
-#### User authentication and profile creation.
+#### (i) User authentication and profile creation.
 
-#### Add, delete, like, and comment on posts.
+#### (ii) Add, delete, like, and comment on posts.
 
-#### Follow and unfollow users.
+#### (iii) Follow and unfollow users.
 
 ### 2.Explore Page:
 
-#### Displays videos and posts shared by followers.
+#### (i) Displays videos and posts shared by followers.
 
-#### Ensures a curated and personalized user feed.
+#### (ii) Ensures a curated and personalized user feed.
 
 ### 3.Analytics Page:
 
-#### View Analysis: Tracks engagement metrics (likes, comments, shares) and rewards users with redeemable points.
+#### (i) View Analysis: Tracks engagement metrics (likes, comments, shares) and rewards users with redeemable points.
 
-#### Top Rank: Displays leaderboard rankings of top scorers within selected locations.
+#### (ii) Top Rank: Displays leaderboard rankings of top scorers within selected locations.
 
-#### Donation Points: Enables users to donate earned points to nearby charitable foundations for social impact.
+#### (iii) Donation Points: Enables users to donate earned points to nearby charitable foundations for social impact.
 
-#### Quiz: Gamified interaction that rewards users for answering quizzes based on platform content.
+#### (iv) Quiz: Gamified interaction that rewards users for answering quizzes based on platform content.
 
 ### 4.Reward System:
 
-#### Point-based achievements encourage user activity.
+#### (i) Point-based achievements encourage user activity.
 
-#### Redeemable points for vouchers, coupons, and discounts.
+#### (ii) Redeemable points for vouchers, coupons, and discounts.
 
 ### 5.Community Engagement:
 
-#### Fosters connections through interactive content.
+#### (i) Fosters connections through interactive content.
 
-#### Promotes responsible digital interactions by rewarding positive behavior.
+#### (ii) Promotes responsible digital interactions by rewarding positive behavior.
 
 
 
