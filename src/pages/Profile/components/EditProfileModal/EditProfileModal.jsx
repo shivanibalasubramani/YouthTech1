@@ -73,7 +73,7 @@ export const EditProfileModal = ({ setIsEditProfile, className }) => {
           </label>
         </div>
         <div className="avatars-section">
-          <p>Choose a picture from your gallary or from existing avatars</p>
+          <p>Choose a picture from your gallery or from existing avatars</p>
           <div className="avatar-container">
             {avatars?.map(({ url }) => (
               <div
