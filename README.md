@@ -1,8 +1,11 @@
 
 # YouthTech
 
+## Demo App Link
 
-## Demo
+https://youthtechkyn.netlify.app
+
+## Demo Video Link
 
 https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
@@ -11,7 +14,7 @@ https://youtu.be/ieq1l4thcPU?si=qtmZI_nATlWAbiw6
 
 - Frontend: React.js, HTML, CSS
 - Backend: MockBee
-- Other Libraries and Tools: React Router, Axios, JWT, Redux etc.
+- Other Libraries and Tools: Mirage JS, React Router, Axios, JWT, Redux etc.
 
 
 ## Features
