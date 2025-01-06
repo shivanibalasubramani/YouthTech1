@@ -57,10 +57,10 @@ export const Bookmark = () => {
 
   // Function to determine the level based on points
   const getUserLevel = (points) => {
-    if (points >= 351) return "Platinum";
-    if (points >= 251) return "Gold";
-    if (points >= 151) return "Silver";
-    return "Bronze";
+    if (points >= 351) return "NeighborhoodNavigators";
+    if (points >= 251) return "CommunityShapers";
+    if (points >= 151) return "BlockBuilder";
+    return "StreetStars";
   };
 
   return (
@@ -81,7 +81,7 @@ export const Bookmark = () => {
           <div className="buttons-container">
             <button 
               className="button" 
-              onClick={() => window.location.href = "https://kynnovate.netlify.app/"}
+              onClick={() => window.location.href = "https://kynalitics.netlify.app/"}
             >
               View Analysis
             </button>
